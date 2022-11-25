@@ -8,3 +8,15 @@ def home_view(request):
 
 def about_view(request):
     return render(request, 'divers/about_page.html')
+
+def bordeaux(request):
+    return
+
+def lyon(request):
+    return
+
+def paris(request):
+    return
+
+def pays_basque(request):
+    return
