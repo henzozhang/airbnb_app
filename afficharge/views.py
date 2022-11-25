@@ -7,7 +7,7 @@ def home_view(request):
     return render(request, 'afficharge/home_page.html')
 
 def about_view(request):
-    return render(request, 'divers/about_page.html')
+    return render(request, 'afficharge/about_page.html')
 
 def bordeaux(request):
     return
