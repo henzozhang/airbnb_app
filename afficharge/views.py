@@ -62,3 +62,17 @@ def bordeaux(request):
 
     context={'Q1':Q1,'porcent_phone':porcent_phone, 'porcent_email':porcent_email,'porcent_email_work':porcent_email_work, 'Q3':Q3,'Q4':Q4}
     return render(request, 'afficharge/result.html', context=context)
+def about_view(request):
+    return render(request, 'afficharge/about_page.html')
+
+def bordeaux(request):
+    return
+
+def lyon(request):
+    return
+
+def paris(request):
+    return
+
+def pays_basque(request):
+    return
