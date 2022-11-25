@@ -38,7 +38,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'templates',
+    'city',
+    
     'afficharge',
     'django.contrib.admin',
     'django.contrib.auth',
