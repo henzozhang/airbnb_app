@@ -1,2 +1,34 @@
 {% extends 'base.html' %}
 
+{% block content %}
+
+<div class="container-fluid" style="">
+
+    <div style="justify-content: center;">
+        <h1> question 1 : </h1>
+        {{Q1| safe}}
+    </div>
+
+    <div>
+        <h1> question 2 : </h1>
+        <ul>
+            <li> Le nombre des verifivation par email : {{porcent_email}}</li>
+            <li>Le nombre des verifivation par telephone : {{porcent_phone}}</li>
+            <li>Le nombre des verifivation par email professionel : {{porcent_email_work}}</li>   
+        </ul>
+    </div>
+
+    <div>
+        <h1> question 3 : </h1>
+        {{Q3| safe}}
+    </div>
+
+
+    <div>
+        <h1> question 4 : </h1>
+        {{Q4| safe}}</div>
+    </div>
+
+</div>
+
+{% endblock content%}

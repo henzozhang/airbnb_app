@@ -23,7 +23,7 @@ def bordeaux(request):
     #Q1
     df_bordeaux=pd.read_csv('/home/apprenant/Documents/Data/bordeaux.csv')
     df_bordeaux_neighbourhood=df_bordeaux[["host_id","number_of_reviews","neighbourhood_cleansed"]].groupby("neighbourhood_cleansed").agg({"host_id":"count","number_of_reviews":"sum"})
-    Q1=df_bordeaux_neighbourhood.to_html()
+    Q1=df_bordeaux_neighbourhood.to_html(justify='center', classes='mystyle')
         
 
     #Q2
@@ -46,7 +46,7 @@ def bordeaux(request):
     df_room['amenities']=df_room['amenities'].astype(float)
     df_room_mean=df_room.groupby('room_type').describe()
     #Q3=pd.DataFrame({'mean':df_room_mean.iloc[:,1],'std':df_room_mean.iloc[:,2]})
-    Q3=df_room_mean.iloc[:,[1,2]].to_html()
+    Q3=df_room_mean.iloc[:,[1,2]].to_html(justify='center', classes='mystyle')
     
     #Q4
     df_price=df_bordeaux[['room_type','price']]
@@ -54,17 +54,17 @@ def bordeaux(request):
     df_price['price']=df_price['price'].str.replace(',','')
     df_price['price']=df_price['price'].astype(float)
     df_price_describe=df_price.groupby('room_type').describe()
-    Q4=df_price_describe.iloc[:,[3,4,6,7]].to_html()
+    Q4=df_price_describe.iloc[:,[3,4,6,7]].to_html(justify='center', classes='mystyle')
     #Q5 
 
     #Q6
 
 
     context={'Q1':Q1,'porcent_phone':porcent_phone, 'porcent_email':porcent_email,'porcent_email_work':porcent_email_work, 'Q3':Q3,'Q4':Q4}
-    return render(request, 'afficharge/result.html', context=context)
+    return render(request, 'afficharge/bordeaux.html', context=context)
+
 def about_view(request):
     return render(request, 'afficharge/about_page.html')
-
 
 def lyon(request):
     return
