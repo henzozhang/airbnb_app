@@ -21,7 +21,7 @@ def home_page(request):
     
 def bordeaux(request):
     #Q1
-    df_bordeaux=pd.read_csv('/home/ha-brek/Devia_AI/airbnb_app/Data/listings_bordeaux.csv')
+    df_bordeaux=pd.read_csv('/home/apprenant/Documents/Data/bordeaux.csv')
     df_bordeaux_neighbourhood=df_bordeaux[["host_id","number_of_reviews","neighbourhood_cleansed"]].groupby("neighbourhood_cleansed").agg({"host_id":"count","number_of_reviews":"sum"})
     Q1=df_bordeaux_neighbourhood.to_html()
         
@@ -65,8 +65,6 @@ def bordeaux(request):
 def about_view(request):
     return render(request, 'afficharge/about_page.html')
 
-def bordeaux(request):
-    return
 
 def lyon(request):
     return
