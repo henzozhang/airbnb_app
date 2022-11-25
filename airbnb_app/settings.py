@@ -39,7 +39,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'city',
-    'data_csv',
     'afficharge',
     'django.contrib.admin',
     'django.contrib.auth',
