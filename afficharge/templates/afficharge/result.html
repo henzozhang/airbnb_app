@@ -8,10 +8,18 @@
 </head>
 <body>    
 {% block content %}
-<h1> question 1 </h1>
+<h1> question 1 : </h1>
 {{Q1| safe}}
-<h1> question 2 </h1>
-{{Q1| safe}}
+<h1> question 2 : </h1>
+<u>
+    <li> Le nombre des verifivation par email : {{porcent_email}}</li>
+    <li>Le nombre des verifivation par telephone : {{porcent_phone}}</li>
+    <li>Le nombre des verifivation par email professionel : {{porcent_email_work}}</li>   
+</u>
+<h1> question 3 : </h1>
+{{Q3| safe}}
+<h1> question 4 : </h1>
+{{Q4| safe}}
 {% endblock %}
 </body>
 </html>
