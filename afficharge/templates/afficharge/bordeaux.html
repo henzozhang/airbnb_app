@@ -1,34 +1,57 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
 
-<div class="container-fluid" style="">
+{% include 'includes/sidebar.html'%}
 
-    <div style="justify-content: center;">
-        <h1> question 1 : </h1>
-        {{Q1| safe}}
+<div id="sidebar-tableau">
+    <div id="reponses" class="container-fluid" style="">
+
+        <div class="reponse">
+            <h3 id="q1"> Nombre d’host et de review par quartier. </h3>
+            {{Q1| safe}}
+        </div>
+
+        <div class="reponse">
+            <h3 id="q2" > Pourcentage d’acceptation et de réponse moyen des hosts </h3>
+            <ul>
+                <li> Le nombre des vérification par email : <font color="blue">{{porcent_email}} %</font></li>
+                <li>Le nombre des vérification par telephone : <font color="blue">{{porcent_phone}} %</font></li>
+                <li>Le nombre des vérification par email professionnel : <font color="blue">{{porcent_email_work}} %</font></li>   
+            </ul>
+        </div>
+
+        <div class="reponse">
+            <h3 id="q3">Pourcentage des hosts ont une vérification (par téléphone, par email ou par email professionnel) </h3>
+            {{Q3| safe}}
+        </div>
+
+        <div class="reponse">
+            <h3 id="q4"> Nombre moyen d’amenities et l'écart type en fonction des types de room </h3>
+            {{Q4| safe}}
+        </div>
+
+        {% comment %} <div>
+            <h2> Prix median par type de room, le maximum, le minimum, le premier et le troisième quartile. </h2>
+            {{Q5| safe}}</div>
+        </div>
+
+        <div>
+            <h2> Nombre d'annonces par valeur de salle de bain. </h2>
+            {{Q6| safe}}</div>
+        </div>
+
+        <div>
+            <h2> Corrélation entre le nombre de reviews et la taille de la description en terme de nombre de caractères ? </h2>
+            {{Q7| safe}}</div>
+        </div>
+
+        <div>
+            <h2> Pourcentage général de séjour où le nom de l'host est identique au nom du reviewer. </h2>
+            {{Q8 safe}}</div>
+        </div> {% endcomment %}
+
     </div>
-
-    <div>
-        <h1> question 2 : </h1>
-        <ul>
-            <li> Le nombre des verifivation par email : {{porcent_email}}</li>
-            <li>Le nombre des verifivation par telephone : {{porcent_phone}}</li>
-            <li>Le nombre des verifivation par email professionel : {{porcent_email_work}}</li>   
-        </ul>
-    </div>
-
-    <div>
-        <h1> question 3 : </h1>
-        {{Q3| safe}}
-    </div>
-
-
-    <div>
-        <h1> question 4 : </h1>
-        {{Q4| safe}}</div>
-    </div>
-
 </div>
-
 {% endblock content%}

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container-fluid" style="padding: 0px;">
+<div class="container-fluid" style="padding: 0px; background: transparent;">
   
     <div id="container-bandeau" class="container-fluid">
         <div class="bandeau">
@@ -11,10 +11,10 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding: 0px; background: transparent;">
             <div class="map" id="map">
                 
-                    <div class="map_image">
+                    <div class="map_image" style="background: transparent;">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 686 593">
 
                             <a id="FR-GES" xlink:title="Grand Est"xlink:href="https://google.com/?q=GES">
@@ -65,7 +65,7 @@
                     </div>
                 
     
-                <div class="map_list">
+                <div class="map_list" style="background: transparent;">
                     <ul>
                         <li> <a href={% url 'bordeaux' %} id="list-NAQ">Bordeaux, Nouvelle Aquitaine</a> </li>
                         <li> <a href={% url 'lyon' %} id="list-ARA">Lyon, Auvergne-Rhone-Alpes</a> </li>

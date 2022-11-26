@@ -23,18 +23,18 @@ def bordeaux(request):
     #Q1
     df_bordeaux=pd.read_csv('/home/apprenant/Documents/Data/bordeaux.csv')
     df_bordeaux_neighbourhood=df_bordeaux[["host_id","number_of_reviews","neighbourhood_cleansed"]].groupby("neighbourhood_cleansed").agg({"host_id":"count","number_of_reviews":"sum"})
-    Q1=df_bordeaux_neighbourhood.to_html(justify='center', classes='mystyle')
+    Q1=df_bordeaux_neighbourhood.to_html(justify='left', classes='mystyle')
         
 
     #Q2
     df_verefication=df_bordeaux[['host_verifications',"host_id"]]
     totale_verification=df_verefication.shape[0]
     number_phone=df_verefication[df_verefication['host_verifications'].str.contains('phone')]['host_verifications'].count()
-    porcent_phone=(number_phone/totale_verification)*100
+    porcent_phone=round((number_phone/totale_verification)*100, 2)
     number_email=df_verefication[df_verefication['host_verifications'].str.contains('email')]['host_verifications'].count()
-    porcent_email=(number_email/totale_verification)*100
+    porcent_email=round((number_email/totale_verification)*100, 2)
     number_email_work=df_verefication[df_verefication['host_verifications'].str.contains('work_email')]['host_verifications'].count()
-    porcent_email_work=(number_email_work/totale_verification)*100
+    porcent_email_work=round((number_email_work/totale_verification)*100, 2)
 
 
     #Q3
@@ -46,7 +46,7 @@ def bordeaux(request):
     df_room['amenities']=df_room['amenities'].astype(float)
     df_room_mean=df_room.groupby('room_type').describe()
     #Q3=pd.DataFrame({'mean':df_room_mean.iloc[:,1],'std':df_room_mean.iloc[:,2]})
-    Q3=df_room_mean.iloc[:,[1,2]].to_html(justify='center', classes='mystyle')
+    Q3=df_room_mean.iloc[:,[1,2]].to_html(justify='left', classes='mystyle')
     
     #Q4
     df_price=df_bordeaux[['room_type','price']]
@@ -54,7 +54,7 @@ def bordeaux(request):
     df_price['price']=df_price['price'].str.replace(',','')
     df_price['price']=df_price['price'].astype(float)
     df_price_describe=df_price.groupby('room_type').describe()
-    Q4=df_price_describe.iloc[:,[3,4,6,7]].to_html(justify='center', classes='mystyle')
+    Q4=df_price_describe.iloc[:,[3,4,6,7]].to_html(justify='left', classes='mystyle')
     #Q5 
 
     #Q6

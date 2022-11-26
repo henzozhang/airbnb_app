@@ -1,15 +1,23 @@
 .header{
-    background-color: rgb(182, 181, 196);
+    background-color: rgb(30, 24, 110);
 }
 
 .footer{
-    background-color: rgb(182, 181, 196);
-    padding: 10px;
-    font-size: 20px;
+    background-color: rgb(25, 56, 122);
+    padding: 20px;
+    font-size: 1.1rem;
+    color: #fff;
     text-align: center;
+
 } 
 
+body{
+    background-color: rgb(229, 237, 247);
+}
 
+main{
+    min-height: 1vh;
+}
 
 .bandeau{
     display: flex;
@@ -24,7 +32,9 @@
     padding-left: 0%;
     margin-left: 0%;
     margin-right: 0%;
-    background-color: rgb(182, 181, 196);
+    background-color: rgba(25, 56, 122, 0.815);
+    color: black;
+    font-weight: bolder;
 }
 
 .main{
@@ -40,13 +50,13 @@
 }
 
 .map_image{
-    padding: 1%;
-    width: 80%;
+    padding: 5%;
+    width: 70%;
     float: left;
 }
 
 .map_image path{
-    fill: #a4ced2;
+    fill: #74ccd4;
     stroke: #fff;
     stroke-width: 1px;
     transition: fill 0.3s;
@@ -59,7 +69,7 @@
 
 .map_list{
     font-size: xx-large;
-    float: right;
+    justify-content: flex-start;
     width: 25%;
     height: 80%;
 }
@@ -70,6 +80,7 @@
     text-decoration: none;
     transition: color 0.3s;
     font-size: large;
+    font-size: 1.8rem;
 }
 
 .map_list a.is-active{ 
@@ -79,6 +90,7 @@
 }
 
 .mystyle {
+    min-width: 65%;
     font-size: 11pt; 
     font-family: Arial;
     border-collapse: collapse; 
@@ -98,3 +110,63 @@
     background: silver;
     cursor: pointer;
 }
+
+.nav-pills{
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.sidebar{
+    position: fixed;
+    left: 0;
+    padding: 10px;
+    padding-left: 5px;
+    min-width: 250px;
+    max-width: 300px;
+    height: auto;
+    background-color: rgba(0, 0, 255, 0.37);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.555);
+    color: black;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar a:hover{
+    color: red;
+    font-weight: bold;
+}
+
+#sidebar-tableau{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+#reponses{
+    margin: 25%;
+    margin-top: 0;
+    margin-right: 5%;
+    padding: 1%;
+    padding-right: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reponse{
+    margin-bottom: 5%;
+    justify-content: center;
+}
+
+ul li {
+    margin: .5em 0;
+    line-height: 1.6;
+  }
+
+h3:target {
+  color: red;
+}
+
