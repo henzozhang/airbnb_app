@@ -11,8 +11,13 @@
 
 } 
 
+html{
+    font-size: 100%;
+}
+
 body{
     background-color: rgb(229, 237, 247);
+    font-size: 1em;
 }
 
 main{
@@ -124,7 +129,7 @@ main{
     min-width: 250px;
     max-width: 300px;
     height: auto;
-    background-color: rgba(0, 0, 255, 0.37);
+    background-color: rgba(89, 89, 255, 0.808);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.555);
     color: black;
 }
@@ -157,7 +162,7 @@ main{
 }
 
 .reponse{
-    margin-bottom: 5%;
+    margin: 5%;
     justify-content: center;
 }
 
@@ -169,4 +174,7 @@ ul li {
 h3:target {
   color: red;
 }
+
+
+
 

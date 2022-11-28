@@ -1,0 +1,549 @@
+<style>
+    @media screen and (min-width:900px) and (max-width: 1500px) {
+        #reponses{
+            margin-left: 35%;
+        }
+    }
+    
+    @media screen and (min-width: 650px) and (max-width: 899px) {
+        .header{
+            background-color: rgb(30, 24, 110);
+        }
+        
+        .footer{
+            background-color: rgb(25, 56, 122);
+            padding: 20px;
+            font-size: 1.1rem;
+            color: #fff;
+            text-align: center;
+        
+        } 
+        
+        html{
+            font-size: 100%;
+        }
+        
+        body{
+            background-color: rgb(229, 237, 247);
+            font-size: 1em;
+        }
+        
+        main{
+            min-height: 1vh;
+        }
+        
+        .bandeau{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+            margin-bottom: 50px;
+        }
+        
+        #container-bandeau{
+            padding-left: 0%;
+            margin-left: 0%;
+            margin-right: 0%;
+            background-color: rgba(25, 56, 122, 0.815);
+            color: black;
+            font-weight: bolder;
+        }
+        
+        .main{
+            flex-grow: 1;
+        }
+        
+        .map{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .map_image{
+            padding: 5%;
+            width: 70%;
+            float: left;
+        }
+        
+        .map_image path{
+            fill: #74ccd4;
+            stroke: #fff;
+            stroke-width: 1px;
+            transition: fill 0.3s;
+        
+        }
+        
+        .map_image .is-active path{
+           fill: blue;
+        }
+        
+        .map_list{
+            font-size: xx-large;
+            justify-content: flex-start;
+            width: 25%;
+            height: 80%;
+        }
+        
+        
+        .map_list a{ 
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: large;
+            font-size: 1.8rem;
+        }
+        
+        .map_list a.is-active{ 
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        .mystyle {
+            min-width: 65%;
+            font-size: 11pt; 
+            font-family: Arial;
+            border-collapse: collapse; 
+            border: 1px solid silver;
+        
+        }
+        
+        .mystyle td, th {
+            padding: 5px;
+        }
+        
+        .mystyle tr:nth-child(even) {
+            background: #E0E0E0;
+        }
+        
+        .mystyle tr:hover {
+            background: silver;
+            cursor: pointer;
+        }
+        
+        .nav-pills{
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        
+        .sidebar{
+            position: fixed;
+            left: 0;
+            padding: 10px;
+            padding-left: 5px;
+            min-width: 250px;
+            max-width: 300px;
+            height: auto;
+            background-color: rgba(89, 89, 255, 0.808);
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.555);
+            color: black;
+        }
+        
+        .sidebar a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .sidebar a:hover{
+            color: red;
+            font-weight: bold;
+        }
+        
+        #sidebar-tableau{
+            margin-top: 2%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #reponses{
+            margin: 25%;
+            margin-top: 0;
+            margin-right: 5%;
+            padding: 1%;
+            padding-right: 0%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .reponse{
+            margin: 5%;
+            justify-content: center;
+        }
+        
+        ul li {
+            margin: .5em 0;
+            line-height: 1.6;
+          }
+        
+        h3:target {
+          color: red;
+        }
+    }
+    
+    @media screen and (min-width: 500px) and (max-width: 649px) {
+    
+        .header{
+            background-color: rgb(30, 24, 110);
+        }
+        
+        .footer{
+            background-color: rgb(25, 56, 122);
+            padding: 20px;
+            font-size: 1.1rem;
+            color: #fff;
+            text-align: center;
+        
+        } 
+        
+        html{
+            font-size: 100%;
+        }
+        
+        body{
+            background-color: rgb(229, 237, 247);
+            font-size: 1em;
+        }
+        
+        main{
+            min-height: 1vh;
+        }
+        
+        .bandeau{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+            margin-bottom: 50px;
+        }
+        
+        #container-bandeau{
+            padding-left: 0%;
+            margin-left: 0%;
+            margin-right: 0%;
+            background-color: rgba(25, 56, 122, 0.815);
+            color: black;
+            font-weight: bolder;
+        }
+        
+        .main{
+            flex-grow: 1;
+        }
+        
+        .map{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .map_image{
+            padding: 5%;
+            width: 70%;
+            float: left;
+        }
+        
+        .map_image path{
+            fill: #74ccd4;
+            stroke: #fff;
+            stroke-width: 1px;
+            transition: fill 0.3s;
+        
+        }
+        
+        .map_image .is-active path{
+           fill: blue;
+        }
+        
+        .map_list{
+            font-size: xx-large;
+            justify-content: flex-start;
+            width: 25%;
+            height: 80%;
+        }
+        
+        
+        .map_list a{ 
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: large;
+            font-size: 1.8rem;
+        }
+        
+        .map_list a.is-active{ 
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        .mystyle {
+            min-width: 65%;
+            font-size: 11pt; 
+            font-family: Arial;
+            border-collapse: collapse; 
+            border: 1px solid silver;
+        
+        }
+        
+        .mystyle td, th {
+            padding: 5px;
+        }
+        
+        .mystyle tr:nth-child(even) {
+            background: #E0E0E0;
+        }
+        
+        .mystyle tr:hover {
+            background: silver;
+            cursor: pointer;
+        }
+        
+        .nav-pills{
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        
+        .sidebar{
+            position: fixed;
+            left: 0;
+            padding: 10px;
+            padding-left: 5px;
+            min-width: 250px;
+            max-width: 300px;
+            height: auto;
+            background-color: rgba(89, 89, 255, 0.808);
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.555);
+            color: black;
+        }
+        
+        .sidebar a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .sidebar a:hover{
+            color: red;
+            font-weight: bold;
+        }
+        
+        #sidebar-tableau{
+            margin-top: 2%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #reponses{
+            margin: 25%;
+            margin-top: 0;
+            margin-right: 5%;
+            padding: 1%;
+            padding-right: 0%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .reponse{
+            margin: 5%;
+            justify-content: center;
+        }
+        
+        ul li {
+            margin: .5em 0;
+            line-height: 1.6;
+          }
+        
+        h3:target {
+          color: red;
+        }
+    }
+    
+    
+    
+    @media screen and (max-width: 500px) {
+        .header{
+            background-color: rgb(30, 24, 110);
+        }
+        
+        .footer{
+            background-color: rgb(25, 56, 122);
+            padding: 20px;
+            font-size: 1.1rem;
+            color: #fff;
+            text-align: center;
+        
+        } 
+        
+        html{
+            font-size: 100%;
+        }
+        
+        body{
+            background-color: rgb(229, 237, 247);
+            font-size: 1em;
+        }
+        
+        main{
+            min-height: 1vh;
+        }
+        
+        .bandeau{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+            margin-bottom: 50px;
+        }
+        
+        #container-bandeau{
+            padding-left: 0%;
+            margin-left: 0%;
+            margin-right: 0%;
+            background-color: rgba(25, 56, 122, 0.815);
+            color: black;
+            font-weight: bolder;
+        }
+        
+        .main{
+            flex-grow: 1;
+        }
+        
+        .map{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .map_image{
+            padding: 5%;
+            width: 70%;
+            float: left;
+        }
+        
+        .map_image path{
+            fill: #74ccd4;
+            stroke: #fff;
+            stroke-width: 1px;
+            transition: fill 0.3s;
+        
+        }
+        
+        .map_image .is-active path{
+           fill: blue;
+        }
+        
+        .map_list{
+            font-size: xx-large;
+            justify-content: flex-start;
+            width: 25%;
+            height: 80%;
+        }
+        
+        
+        .map_list a{ 
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: large;
+            font-size: 1.8rem;
+        }
+        
+        .map_list a.is-active{ 
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        .mystyle {
+            min-width: 65%;
+            font-size: 11pt; 
+            font-family: Arial;
+            border-collapse: collapse; 
+            border: 1px solid silver;
+        
+        }
+        
+        .mystyle td, th {
+            padding: 5px;
+        }
+        
+        .mystyle tr:nth-child(even) {
+            background: #E0E0E0;
+        }
+        
+        .mystyle tr:hover {
+            background: silver;
+            cursor: pointer;
+        }
+        
+        .nav-pills{
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        
+        .sidebar{
+            position: fixed;
+            left: 0;
+            padding: 10px;
+            padding-left: 5px;
+            min-width: 250px;
+            max-width: 300px;
+            height: auto;
+            background-color: rgba(89, 89, 255, 0.808);
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.555);
+            color: black;
+        }
+        
+        .sidebar a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .sidebar a:hover{
+            color: red;
+            font-weight: bold;
+        }
+        
+        #sidebar-tableau{
+            margin-top: 2%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #reponses{
+            margin: 25%;
+            margin-top: 0;
+            margin-right: 5%;
+            padding: 1%;
+            padding-right: 0%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .reponse{
+            margin: 5%;
+            justify-content: center;
+        }
+        
+        ul li {
+            margin: .5em 0;
+            line-height: 1.6;
+          }
+        
+        h3:target {
+          color: red;
+        }
+    }
+    
+        
+</style>
