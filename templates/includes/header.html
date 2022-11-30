@@ -1,22 +1,37 @@
-{% url 'home' as url_home %}
-{% url 'about' as url_about %}
+{% url 'home' as url_home %} {% url 'about' as url_about %}
 
 <div class="container">
-    <header class="d-flex justify-content-center py-3">
-      <ul class="nav nav-pills">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      {% if request.path == url_home %}
+      <li class="nav-item">
+        <a href="{{url_home}}" class="nav-link active" aria-current="page"
+          >Home</a
+        >
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a href="{{url_home}}" class="nav-link" aria-current="page">Home</a>
+      </li>
+      {% endif %} {% if request.path == url_about %}
+      <li class="nav-item">
+        <a href="{{url_about}}" class="nav-link active" aria-current="page"
+          >About</a
+        >
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a href="{{url_about}}" class="nav-link" aria-current="page">About</a>
+      </li>
+      {% endif %} {% if request.user.is_authenticated %}
+      <li class="nav-item">
+        <p class="navbar-text">Logged as : <b>{{request.user}}</b></p>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+      </li>
 
-        {% if request.path == url_home %}
-        <li class="nav-item"><a href="{{url_home}}" class="nav-link active" aria-current="page">Home</a></li>
-        {% else %}
-        <li class="nav-item"><a href="{{url_home}}" class="nav-link" aria-current="page">Home</a></li>
-        {% endif %}
-
-        {% if request.path == url_about %}
-        <li class="nav-item"><a href="{{url_about}}" class="nav-link active" aria-current="page">About</a></li>
-        {% else %}
-        <li class="nav-item"><a href="{{url_about}}" class="nav-link" aria-current="page">About</a></li>
-        {% endif %}
-        
-      </ul>
-    </header>
-  </div>
+      {% endif %}
+    </ul>
+  </header>
+</div>

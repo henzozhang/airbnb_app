@@ -10,6 +10,14 @@
 #     return render(request, 'divers/about_page.html')
 
 from django.shortcuts import render
+from .forms import UserCreationFormCustom
+from django.views.generic.edit import CreateView
+from . import models
+# from django.contrib.auth.forms import UserCreationForm
+from . import forms
+from django.urls import reverse_lazy
+
+
 
 import pandas as pd
 import numpy as np
@@ -250,3 +258,9 @@ def basque(request):
 
     context={'Q1':Q1,'porcent_phone':porcent_phone, 'porcent_email':porcent_email,'porcent_email_work':porcent_email_work, 'Q3':Q3,'Q4':Q4,'Q5':Q5,'Q6':Q6}
     return render(request, 'afficharge/basque.html', context=context)
+
+    
+class UserCreateView(CreateView):
+    form_class = forms.UserCreationFormCustom
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'

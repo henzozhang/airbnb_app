@@ -7,5 +7,6 @@ urlpatterns = [
     path('bordeaux/', views.bordeaux, name='bordeaux'),
     path('lyon/', views.lyon,  name='lyon'),
     path('paris/', views.paris, name='paris'),
-    path('pays-basque/', views.basque,  name='pays-basque')
+    path('basque/', views.basque,  name='basque'),
+    path('signup/', views.UserCreateView.as_view(), name='signup')
 ]
