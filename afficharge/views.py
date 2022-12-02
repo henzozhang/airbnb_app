@@ -17,10 +17,24 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+from django.urls import reverse_lazy
+
+from django.views.generic.edit import CreateView
+
+from . import forms
+
+from django.urls import reverse_lazy
+
 import os 
 
 def home_page(request):
     return render(request, 'afficharge/home_page.html')
+
+class UserCreateView(CreateView):
+    form_class = forms.UserCreationFormCustom
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
+
     
 # def bordeaux(request):
 #     #Q1
