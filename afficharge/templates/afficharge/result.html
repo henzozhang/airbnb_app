@@ -1,34 +1,74 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+        {% include 'includes/style_result.html' %}
+{% endblock style %}
 
 {% block content %}
 
-<div class="container-fluid" style="">
+{% include 'includes/sidebar.html'%}
 
-    <div style="justify-content: center;">
-        <h1> question 1 : </h1>
-        {{Q1| safe}}
+<div id="sidebar-tableau">
+    <div id="reponses" class="container-fluid">
+
+        <div class="reponse">
+            <div style = "margin-bottom: 1%;">
+                <h3 id="q1"> Nombre d’host et de review par quartier. </h3>
+            {{Q1| safe}}
+            </div>
+            <div><img src="{% static 'img/question1.png' %}" alt=""></div>
+        </div>
+
+        <div class="reponse">
+            <h3 id="q2"> Pourcentage d’acceptation et de réponse moyen des hosts. </h3>
+            <img src="{% static 'img/question2.png' %}" alt="" width="50%">
+        </div>
+
+        <div class="reponse">
+            <div style = "margin-bottom: 1%;">
+                <h3 id="q3" > Pourcentage des hosts ont une vérification (par téléphone, par email ou par email professionnel).</h3>
+                <ul>
+                    <li> Le nombre des vérification par email : <font color="blue">{{porcent_email}} %</font></li>
+                    <li>Le nombre des vérification par telephone : <font color="blue">{{porcent_phone}} %</font></li>
+                    <li>Le nombre des vérification par email professionnel : <font color="blue">{{porcent_email_work}} %</font></li>   
+                </ul>
+            </div>
+            <div><img src="{% static 'img/question3.png' %}" alt=""></div>
+        </div>
+
+        <div class="reponse">
+            <div style = "margin-bottom: 1%;">
+                <h3 id="q4">Nombre moyen d’amenities et l'écart type en fonction des types de room. </h3>
+                {{Q4| safe}}
+            </div>
+            <div><img src="{% static 'img/question4.png' %}" alt=""></div>
+        </div>
+
+        <div class="reponse">
+            <div style = "margin-bottom: 1%;">
+                <h3 id="q5"> Prix median par type de room, le maximum, le minimum, le premier et le troisième quartile. </h3>
+                {{Q5| safe}}
+            </div>
+            <div><img src="{% static 'img/question5.png' %}" alt=""></div>
+            
+        </div>
+
+        <div class="reponse">
+            <h3 id="q6">  Nombre d'annonces par valeur de salle de bain. </h3>
+            <img src="{% static 'img/question6.png' %}"alt="" width="65%">
+        </div>
+
+        <div class="reponse">
+            <h3 id="q7"> Corrélation entre le nombre de reviews et la taille de la description en terme de nombre de caractères ? </h3>
+            <img src="{% static 'img/question7.png' %}"alt="" width="65%">
+        </div>
+
+        <div class="reponse">
+            <h3 id="q8">  Pourcentage général de séjour où le nom de l'host est identique au nom du reviewer. </h3>
+            <img src="{% static 'img/question8.png' %}"alt="" width="40%">
+        </div> 
+
     </div>
-
-    <div>
-        <h1> question 2 : </h1>
-        <ul>
-            <li> Le nombre des verifivation par email : {{porcent_email}}</li>
-            <li>Le nombre des verifivation par telephone : {{porcent_phone}}</li>
-            <li>Le nombre des verifivation par email professionel : {{porcent_email_work}}</li>   
-        </ul>
-    </div>
-
-    <div>
-        <h1> question 3 : </h1>
-        {{Q3| safe}}
-    </div>
-
-
-    <div>
-        <h1> question 4 : </h1>
-        {{Q4| safe}}</div>
-    </div>
-
 </div>
-
 {% endblock content%}
