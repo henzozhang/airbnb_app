@@ -6,7 +6,7 @@
 #     # import pudb;pu.db()
 #     return render(request, 'afficharge/home_page.html')
 
-# def about_view(request):
+#def about_view(request):
 #     return render(request, 'divers/about_page.html')
 
 from django.shortcuts import render
